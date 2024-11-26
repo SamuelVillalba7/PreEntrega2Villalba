@@ -15,6 +15,9 @@ export default function NavBar (){
                     <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                     <Link className="nav-link" to="/category/monitor">monitor</Link>
                     <Link className="nav-link" to="/category/mouse">mouse</Link>
+                    <Link className="nav-link" to="/category/teclado">teclado</Link>
+                    <Link className="nav-link" to="/category/parlante">parlante</Link>
+                    <Link className="nav-link" to="/category/laptop">laptop</Link>
                 </div>
                 </div>
             </div>

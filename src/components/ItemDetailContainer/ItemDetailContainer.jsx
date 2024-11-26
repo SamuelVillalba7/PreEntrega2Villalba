@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import {getProductById} from "../../asyncMook"
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import "./ItemDetailContainer.css"
 
 export default function ItemDetailContainer(){
 
@@ -14,7 +15,7 @@ export default function ItemDetailContainer(){
     })
     
     return(
-        <div className="container">
+        <div className="container ItemDetailContainer">
             <ItemDetail product={product}/>
         </div>
     )
