@@ -1,6 +1,10 @@
 import {Link} from "react-router-dom"
+import { useCart } from "../../hooks/useCart"
 
 export default function NavBar (){
+    
+    const {numero}= useCart()
+    
     return (
         <>
 
@@ -18,6 +22,8 @@ export default function NavBar (){
                     <Link className="nav-link" to="/category/teclado">teclado</Link>
                     <Link className="nav-link" to="/category/parlante">parlante</Link>
                     <Link className="nav-link" to="/category/laptop">laptop</Link>
+                    <Link className="nav-link" to="/cart">carrito</Link>
+                    <p>{numero}</p>
                 </div>
                 </div>
             </div>

@@ -1,12 +1,15 @@
 import { useState } from "react"
 import "./ItemDetail.css"
+import { useCart } from "../../hooks/useCart"
 export default function ItemDetail ({product}){
 
     const[cantidad,setCantidad]= useState(1)
-    
+    const {addItem, isInCart, cart}= useCart()
     const incrementar=()=>{
         if(product.Stock>cantidad){
             setCantidad(cantidad+1)
+            console.log(cart)
+            console.log(isInCart(product.Id));
         }    
     }
 
@@ -15,7 +18,14 @@ export default function ItemDetail ({product}){
             setCantidad(cantidad-1)
         }
     }
+
+    const handleAddToCart = () => {
+        addItem(product,cantidad); // Llama a addItem al hacer clic
+      };
     
+
+     
+
     
     
     return (
@@ -29,7 +39,7 @@ export default function ItemDetail ({product}){
                 <h5>cantidad: {cantidad}</h5>
                 <div className="botonera">
                     <button onClick={decrementar} className="btn btn-secondary">-</button>
-                    <button className="btn btn-primary">agregar carrito</button>
+                    <button onClick={handleAddToCart} className="btn btn-primary">agregar carrito</button>
                     <button onClick={incrementar} className="btn btn-secondary">+</button>
                 </div>
             </div>
